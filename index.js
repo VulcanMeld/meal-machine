@@ -11,15 +11,20 @@ const getMeal = () => {
 }
 
 const appendIngredients = (mealObject) => {
+    //et numIngredients = 0
+    //let currentIngredientIndex = 1
     Object.keys(mealObject).forEach(element => {
         if(element.charAt(12) == "t" && mealObject[element] != "") {
           $(".js-results").append(`<p>Ingredient: ${mealObject[element]}<p>`)
+          //numIngredients++
         }})
 
     
 }
 
+
 const displayMeal = (mealObject) => {
+    checkNutritionFacts(mealObject)
     searchYoutube(mealObject.strMeal)
     $(".js-results").empty()
     $(".js-results").append(`<p><img src= "${mealObject.strMealThumb}"</p><h1>${mealObject.strMeal}</h1>
@@ -52,6 +57,17 @@ const displayYoutube = (videoUrl) => {
 
 }
 
+const checkNutritionFacts = (mealObject) => {
+
+    Object.keys(mealObject).forEach(element => {
+        if(element.charAt(12) == "t" && mealObject[element] != "") {
+            fetch(`https://api.nal.usda.gov/ndb/search?api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY&format=json&q=${mealObject[element]}`)
+            .then(response => response.json())
+            .then(data => console.log(data.list.item[0].ndbno))
+
+        }
+})
+}
 
 
 const watchForm = () => {
