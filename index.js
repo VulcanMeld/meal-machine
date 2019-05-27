@@ -21,7 +21,7 @@ const appendIngredients = (mealObject) => {
 
 const displayMeal = (mealObject) => {
     $(".js-results").empty()
-    $(".js-results").append(`<p><img src= ${mealObject.strMealThumb}</p><h1>${mealObject.strMeal}</h1>
+    $(".js-results").append(`<p><img src= "${mealObject.strMealThumb}"</p><h1>${mealObject.strMeal}</h1>
     <p>${mealObject.strInstructions}</p>`)
     appendIngredients(mealObject)
 
