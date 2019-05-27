@@ -33,12 +33,31 @@ const displayMeal = (mealObject) => {
 
 }
 
+const extractYoutubeVideoLink = (searchResponse) => {
+    let id = searchResponse.items[0].id.videoId
+    let videoUrl = "https://www.youtube.com/embed?v=" + id
+    displayYoutube(videoUrl)
+}
+
+const searchYoutube = (mealName) => {
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${mealName}&videoEmbeddable=true&type=video&key=AIzaSyABb4Ts1QrPfooLWSGOPNRhUzScyyE1GJg`)
+    .then(response => response.json())
+    .then(data => extractYoutubeVideoLink(data))
+}
+
+const displayYoutube = (videoUrl) => {
+    $(".js-youtube").css("display", "block")
+    $("iframe").attr("src", videoUrl)
+
+}
+
 
 
 const watchForm = () => {
     $("form").on("submit", function (event) {
         event.preventDefault()
         getMeal()
+        searchYoutube()
 
     })
 }
