@@ -10,10 +10,20 @@ const getMeal = () => {
 
 }
 
+const appendIngredients = (mealObject) => {
+    Object.keys(mealObject).forEach(element => {
+        if(element.charAt(12) == "t" && mealObject[element] != "") {
+          $(".js-results").append(`<p>Ingredient: ${mealObject[element]}<p>`)
+        }})
+
+    
+}
+
 const displayMeal = (mealObject) => {
     $(".js-results").empty()
     $(".js-results").append(`<p><img src= ${mealObject.strMealThumb}</p><h1>${mealObject.strMeal}</h1>
     <p>${mealObject.strInstructions}</p>`)
+    appendIngredients(mealObject)
 
 
 
@@ -29,7 +39,7 @@ const watchForm = () => {
     $("form").on("submit", function (event) {
         event.preventDefault()
         getMeal()
-        
+
     })
 }
 
