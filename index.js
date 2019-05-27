@@ -63,12 +63,18 @@ const checkNutritionFacts = (mealObject) => {
         if(element.charAt(12) == "t" && mealObject[element] != "") {
             fetch(`https://api.nal.usda.gov/ndb/search?api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY&format=json&q=${mealObject[element]}`)
             .then(response => response.json())
-            .then(data => console.log(data.list.item[0].ndbno))
+            .then(data => findFacts(data.list.item[0].ndbno))
 
         }
 })
 }
 
+
+const findFacts = (ndbno) => {
+    fetch(`https://api.nal.usda.gov/ndb/V2/reports?ndbno=${ndbno}&type=b&format=json&api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY`)
+    .then(response => response.json())
+    .then(body => console.log(body.foods[0]))
+}
 
 const watchForm = () => {
     $("form").on("submit", function (event) {
