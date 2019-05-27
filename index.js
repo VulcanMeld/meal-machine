@@ -11,8 +11,13 @@ const getMeal = () => {
 
 
 
+const watchForm = () => {
+    $("form").on("submit", function (event) {
+        event.preventDefault()
+        getMeal()
 
-
+    })
+}
 
 
 
@@ -20,8 +25,7 @@ const getMeal = () => {
 
 
 const runApp = () => {
-
-    getMeal()
+    watchForm()
 
 }
 
