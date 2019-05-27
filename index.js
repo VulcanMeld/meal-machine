@@ -20,6 +20,7 @@ const appendIngredients = (mealObject) => {
 }
 
 const displayMeal = (mealObject) => {
+    searchYoutube(mealObject.strMeal)
     $(".js-results").empty()
     $(".js-results").append(`<p><img src= "${mealObject.strMealThumb}"</p><h1>${mealObject.strMeal}</h1>
     <p>${mealObject.strInstructions}</p>`)
@@ -35,7 +36,7 @@ const displayMeal = (mealObject) => {
 
 const extractYoutubeVideoLink = (searchResponse) => {
     let id = searchResponse.items[0].id.videoId
-    let videoUrl = "https://www.youtube.com/embed?v=" + id
+    let videoUrl = "https://www.youtube.com/embed/" + id
     displayYoutube(videoUrl)
 }
 
@@ -57,7 +58,6 @@ const watchForm = () => {
     $("form").on("submit", function (event) {
         event.preventDefault()
         getMeal()
-        searchYoutube()
 
     })
 }
