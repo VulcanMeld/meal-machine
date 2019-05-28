@@ -78,7 +78,7 @@ const findFacts = (ndbno) => {
 
 
 const parseCalories = (nutritionFacts) => {
-    let servingSize = nutritionFacts.measures[0]. //completefunction
+    let servingSize = nutritionFacts.measures[0] //completefunction
 
 
 }
