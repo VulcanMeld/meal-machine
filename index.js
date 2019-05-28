@@ -73,7 +73,14 @@ const checkNutritionFacts = (mealObject) => {
 const findFacts = (ndbno) => {
     fetch(`https://api.nal.usda.gov/ndb/V2/reports?ndbno=${ndbno}&type=b&format=json&api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY`)
     .then(response => response.json())
-    .then(body => console.log(body.foods[0]))
+    .then(body => parseCalories(body.foods[0].food.nutrients[0]))
+}
+
+
+const parseCalories = (nutritionFacts) => {
+    let servingSize = nutritionFacts.measures[0]. //completefunction
+
+
 }
 
 const watchForm = () => {
