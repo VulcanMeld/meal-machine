@@ -11,7 +11,7 @@ const getMeal = () => {
 }
 
 const appendIngredients = (mealObject) => {
-    //et numIngredients = 0
+    //let numIngredients = 0
     //let currentIngredientIndex = 1
     Object.keys(mealObject).forEach(element => {
         if(element.charAt(12) == "t" && mealObject[element] != "") {
