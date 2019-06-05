@@ -24,7 +24,6 @@ const appendIngredients = (mealObject) => {
 
 
 const displayMeal = (mealObject) => {
-    checkNutritionFacts(mealObject)
     searchYoutube(mealObject.strMeal)
     $(".js-results").empty()
     $(".js-results").append(`<p><img src= "${mealObject.strMealThumb}"</p><h1>${mealObject.strMeal}</h1>
@@ -57,31 +56,6 @@ const displayYoutube = (videoUrl) => {
 
 }
 
-const checkNutritionFacts = (mealObject) => {
-
-    Object.keys(mealObject).forEach(element => {
-        if(element.charAt(12) == "t" && mealObject[element] != "") {
-            fetch(`https://api.nal.usda.gov/ndb/search?api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY&format=json&q=${mealObject[element]}`)
-            .then(response => response.json())
-            .then(data => findFacts(data.list.item[0].ndbno))
-
-        }
-})
-}
-
-
-const findFacts = (ndbno) => {
-    fetch(`https://api.nal.usda.gov/ndb/V2/reports?ndbno=${ndbno}&type=b&format=json&api_key=jsVv9MCAoWaFLFVS9La4o6wYJrrqnPnZogYHK0YY`)
-    .then(response => response.json())
-    .then(body => parseCalories(body.foods[0].food.nutrients[0]))
-}
-
-
-const parseCalories = (nutritionFacts) => {
-    let servingSize = nutritionFacts.measures[0] //completefunction
-
-
-}
 
 const watchForm = () => {
     $("form").on("submit", function (event) {
