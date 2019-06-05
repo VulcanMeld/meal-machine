@@ -7,6 +7,12 @@ body {
     margin: 0 auto;
 }
 
+iframe {
+    border: 4px solid #FFB4A6;
+    border-radius: 5px;
+
+}
+
 
 .image-container {
     height: 400px;
@@ -55,6 +61,24 @@ body {
 }
 
 .js-button:hover {
+    background: #CF4F30;
+
+}
+
+.js-ingredient {
+    background: #306BCF;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    color: white;
+    transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  border-radius: 5px;
+
+}
+
+.js-ingredient:hover {
     background: #CF4F30;
 
 }

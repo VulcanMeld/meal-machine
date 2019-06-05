@@ -15,7 +15,7 @@ const appendIngredients = (mealObject) => {
     //let currentIngredientIndex = 1
     Object.keys(mealObject).forEach(element => {
         if(element.charAt(12) == "t" && mealObject[element] != "") {
-          $(".js-results").append(`<p>Ingredient: ${mealObject[element]}<p>`)
+          $(".js-results").append(`<p class = 'js-ingredient'>Ingredient: ${mealObject[element]}<p>`)
           //numIngredients++
         }})
 
