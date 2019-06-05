@@ -31,9 +31,7 @@ const displayMeal = (mealObject) => {
       <div class="side"><img src= "${mealObject.strMealThumb}"</p></div>
       <div class="side back">${mealObject.strMeal}</div>
     </div>
-  </div>
-  
-    <p>${mealObject.strInstructions}</p>`)
+  </div>`)
     appendIngredients(mealObject)
 
 
