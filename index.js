@@ -26,7 +26,7 @@ const appendIngredients = (mealObject) => {
 const displayMeal = (mealObject) => {
     searchYoutube(mealObject.strMeal)
     $(".js-results").empty()
-    $(".js-results").append(`<p><img src= "${mealObject.strMealThumb}"</p><h1>${mealObject.strMeal}</h1>
+    $(".js-results").append(`<h1>${mealObject.strMeal}</h1><p><img src= "${mealObject.strMealThumb}"</p>
     <p>${mealObject.strInstructions}</p>`)
     appendIngredients(mealObject)
 
