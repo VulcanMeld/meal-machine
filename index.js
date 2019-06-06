@@ -11,7 +11,7 @@ const getMeal = () => {
 const appendIngredientValues = mealObject => {
   // Next function finds the ingredient properties in the meal object and appends their values to the DOM
   Object.keys(mealObject).forEach(element => {
-    if (element.charAt(12) == "t" && mealObject[element] != "") {
+    if (element.charAt(12) == "t" && mealObject[element] != "" && mealObject[element] != null) {
       $(".js-ingredients-div").append(
         `<p class = 'js-ingredient'>Ingredient: ${mealObject[element]}<p>`
       );
