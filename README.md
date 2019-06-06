@@ -6,4 +6,4 @@ A random meal generation application that gets you away from the recipe book and
 ====================
 Screenshots
 ====================
-(https://imgur.com/DpCiKD0)
+[Imgur](https://i.imgur.com/DpCiKD0.png)
