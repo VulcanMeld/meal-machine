@@ -11,41 +11,31 @@ body {
 iframe {
     border: 4px solid #FFB4A6;
     border-radius: 5px;
+    width: 30%;
+    height: 30%;
 
 }
-
-
 .image-container {
-    height: 400px;
-    width: 50%;
+    height: 30%;
+    width: 30%;
     display: inline-block;
   }
   .image {
     height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
     width: 100%;
     border: 4px solid #FFB4A6;
     border-radius: 5px;
 
   }
-  
-  
-    .image:hover {
-    transform: rotateY(180deg);
-  }
-  .image .side {
-    backface-visibility: hidden;
-    height: 100%;
+
+  img {
+    height:100%;
     width: 100%;
-    position: absolute;
-    overflow: hidden;
+
   }
-  .image .back {
-    transform: rotateY(180deg);
-    background: #CF4F30;
-    font-size: 50px;
-  }
+  
+  
+    
   
 
 .js-button {
@@ -114,4 +104,42 @@ p {
 
 .js-youtube {
     display: none;
+}
+
+
+@media (min-width: 769px) {
+  body {
+    background: red;
+  }
+
+  .image-container {
+    height: 400px;
+}
+
+.image {
+  transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+.image:hover {
+  transform: rotateY(180deg);
+}
+.image .side {
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.image .back {
+  transform: rotateY(180deg);
+  background: #CF4F30;
+  font-size: 50px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
 }
