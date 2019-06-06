@@ -8,6 +8,12 @@ body {
   color: white;
 }
 
+.directions {
+  width: 25%;
+  background: #91c236;
+  display: inline-block;
+}
+
 iframe {
   border: 4px solid #ffb4a6;
   border-radius: 5px;
@@ -94,6 +100,15 @@ p {
 }
 
 @media (min-width: 769px) {
+  header {
+    font-size: 50px;
+  }
+
+  .js-button {
+    width: 30%;
+    height: 30%;
+    font-size: 100%;
+  }
   .image-container {
     height: 400px;
   }

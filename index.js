@@ -61,6 +61,8 @@ const displayYoutube = videoUrl => {
 const userGetsMeal = () => {
   $(".js-meal-search").on("submit", function(event) {
     event.preventDefault();
+    $(".directions").empty();
+    $(".directions").append("Search for another meal or learn more about this one!")
     $(".js-instructions-button").css("display", "inline-block");
     $(".js-ingredients-button").css("display", "inline-block");
     getMeal();
