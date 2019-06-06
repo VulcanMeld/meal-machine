@@ -31,7 +31,8 @@ const displayMeal = (mealObject) => {
       <div class="side"><img src= "${mealObject.strMealThumb}"</p></div>
       <div class="side back">${mealObject.strMeal}</div>
     </div>
-  </div>`)
+  </div>
+  <p class="js-instructions">${mealObject.strInstructions}</p>`)
     appendIngredients(mealObject)
 
 
@@ -62,9 +63,30 @@ const displayYoutube = (videoUrl) => {
 
 
 const watchForm = () => {
-    $("form").on("submit", function (event) {
+    $(".js-meal-search").on("submit", function (event) {
         event.preventDefault()
+        $(".js-instructions-button").css("display", "inline-block")
         getMeal()
+
+    })
+
+    let instructionsShown = false
+
+    $(".js-instructions-button").on("click" , function (event) {
+        if(instructionsShown == false) {
+        $(".js-instructions").css("display", "block")
+        $(".js-instructions-button").val("Hide Instructions")
+        instructionsShown = true
+
+
+        }else if(instructionsShown == true){
+            $(".js-instructions").css("display", "none")
+            $(".js-instructions-button").val("Show Instructions")
+            instructionsShown = false
+
+        }
+        
+
 
     })
 }

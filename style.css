@@ -17,13 +17,12 @@ iframe {
 
 .image-container {
     height: 400px;
-    perspective: 600;
     position: relative;
     width: 400px;
   }
   .image {
     height: 100%;
-    position: absolute;
+    position: relative;
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
     width: 100%;
@@ -92,6 +91,14 @@ h1 {
 
 p {
     background: #FFB4A6;
+}
+
+.js-instructions {
+  display: none;
+}
+
+.js-instructions-button {
+  display: none;
 }
 
 
