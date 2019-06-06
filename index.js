@@ -60,7 +60,7 @@ const searchYoutube = (mealName) => {
 }
 
 const displayYoutube = (videoUrl) => {
-    $(".js-youtube").css("display", "block")
+    $(".js-youtube").css("display", "inline-block")
     $("iframe").attr("src", videoUrl)
 
 }

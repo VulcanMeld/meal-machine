@@ -17,12 +17,11 @@ iframe {
 
 .image-container {
     height: 400px;
-    position: relative;
-    width: 400px;
+    width: 50%;
+    display: inline-block;
   }
   .image {
     height: 100%;
-    position: relative;
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
     width: 100%;
@@ -38,8 +37,8 @@ iframe {
   .image .side {
     backface-visibility: hidden;
     height: 100%;
-    position: absolute;
     width: 100%;
+    position: absolute;
     overflow: hidden;
   }
   .image .back {
@@ -75,6 +74,7 @@ iframe {
   transition-duration: 1s;
   transition-timing-function: linear;
   border-radius: 5px;
+  display: inline-block;
 
 }
 
@@ -98,6 +98,14 @@ p {
 }
 
 .js-instructions-button {
+  display: none;
+}
+
+.js-ingredient {
+  display: none;
+}
+
+.js-ingredients-button {
   display: none;
 }
 
