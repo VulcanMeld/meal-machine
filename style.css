@@ -108,9 +108,6 @@ p {
 
 
 @media (min-width: 769px) {
-  body {
-    background: red;
-  }
 
   .image-container {
     height: 400px;
