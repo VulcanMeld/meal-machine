@@ -94,7 +94,9 @@ p {
 }
 
 .js-instructions {
+  color:#306BCF;
   display: none;
+  
 }
 
 .js-instructions-button {
