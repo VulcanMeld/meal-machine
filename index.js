@@ -10,11 +10,11 @@ const getMeal = () => {
 
 }
 
-const appendIngredientValues = (mealObject) => 
+const appendIngredientValues = (mealObject) => {
 // Next function finds the ingredient properties in the meal object and appends their values to the DOM
         Object.keys(mealObject).forEach(element => {  
         if(element.charAt(12) == "t" && mealObject[element] != "") {
-          $(".js-ingredients-div").append(`<p class = 'js-ingredient js-ingredient-${numIngredients}'>Ingredient: ${mealObject[element]}<p>`)
+          $(".js-ingredients-div").append(`<p class = 'js-ingredient'>Ingredient: ${mealObject[element]}<p>`)
         }
         
         })
@@ -36,7 +36,7 @@ const displayMeal = (mealObject) => {
     searchYoutube(mealObject.strMeal)
     $(".js-results").empty()
     $(".js-results").append(`<h1>${mealObject.strMeal}</h1><div class="image-container">
-    <div class="image">
+    <div role="image" class="image">
       <div class="side"><img src= "${mealObject.strMealThumb}"</p></div>
       <div class="side back">${mealObject.strMeal}</div>
     </div>
@@ -87,12 +87,14 @@ const instructionsButtonHandler = () => {
     $(".js-instructions-button").on("click" , function (event) {
         if(instructionsShown == false) {
         $(".js-instructions").css("display", "block")
+        $(".js-instructions").attr("aria-expanded", "true")
         $(".js-instructions-button").val("Hide Instructions")
         instructionsShown = true
 
 
         }else if(instructionsShown == true){
             $(".js-instructions").css("display", "none")
+            $(".js-instructions").attr("aria-expanded", "false")
             $(".js-instructions-button").val("Show Instructions")
             instructionsShown = false
 
@@ -111,12 +113,14 @@ const ingredientsButtonHandler = () => {
     $(".js-ingredients-button").on("click" , function (event) {
         if(ingredientsShown == false) {
         $(".js-ingredient").css("display", "inline-block")
+        $(".js-ingredients-div").attr("aria-expanded", "true")
         $(".js-ingredients-button").val("Hide Ingredients")
         ingredientsShown = true
 
 
         }else if(ingredientsShown == true){
             $(".js-ingredient").css("display", "none")
+            $(".js-ingredients-div").attr("aria-expanded", "false")
             $(".js-ingredients-button").val("Show Ingredients")
             ingredientsShown = false
 
