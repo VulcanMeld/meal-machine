@@ -10,17 +10,21 @@ const getMeal = () => {
 
 }
 
-const appendIngredients = (mealObject) => {
-    $(".js-results").append(`<div class = "js-ingredients-div"></div>`)
-    let numIngredients = 0
-    //let currentIngredientIndex = 1
-    Object.keys(mealObject).forEach(element => {
+const appendIngredientValues = (mealObject) => 
+// Next function finds the ingredient properties in the meal object and appends their values to the DOM
+        Object.keys(mealObject).forEach(element => {  
         if(element.charAt(12) == "t" && mealObject[element] != "") {
           $(".js-ingredients-div").append(`<p class = 'js-ingredient js-ingredient-${numIngredients}'>Ingredient: ${mealObject[element]}<p>`)
-          numIngredients++
         }
         
         })
+
+}
+
+const appendIngredients = (mealObject) => {
+    $(".js-results").append(`<div class = "js-ingredients-div"></div>`)
+    appendIngredientValues(mealObject)
+    
 
     
 
@@ -66,8 +70,7 @@ const displayYoutube = (videoUrl) => {
 
 }
 
-
-const watchForm = () => {
+const userGetsMeal = () => {
     $(".js-meal-search").on("submit", function (event) {
         event.preventDefault()
         $(".js-instructions-button").css("display", "inline-block")
@@ -76,6 +79,9 @@ const watchForm = () => {
 
     })
 
+}
+
+const instructionsButtonHandler = () => {
     let instructionsShown = false
 
     $(".js-instructions-button").on("click" , function (event) {
@@ -96,6 +102,10 @@ const watchForm = () => {
 
     })
 
+}
+
+const ingredientsButtonHandler = () => {
+
     let ingredientsShown = false
 
     $(".js-ingredients-button").on("click" , function (event) {
@@ -115,6 +125,28 @@ const watchForm = () => {
 
 
     })
+
+
+}
+
+const buttonHandlers = () => {
+
+    instructionsButtonHandler()
+    ingredientsButtonHandler()
+
+   
+
+    
+
+}
+
+
+const watchForm = () => {
+    
+    userGetsMeal()
+    buttonHandlers()
+
+    
 }
 
 
