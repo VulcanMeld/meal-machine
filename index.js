@@ -11,13 +11,17 @@ const getMeal = () => {
 }
 
 const appendIngredients = (mealObject) => {
-    //let numIngredients = 0
+    let numIngredients = 0
     //let currentIngredientIndex = 1
     Object.keys(mealObject).forEach(element => {
         if(element.charAt(12) == "t" && mealObject[element] != "") {
-          $(".js-results").append(`<p class = 'js-ingredient'>Ingredient: ${mealObject[element]}<p>`)
-          //numIngredients++
-        }})
+          $(".js-results").append(`<p class = 'js-ingredient js-ingredient-${numIngredients}'>Ingredient: ${mealObject[element]}<p>`)
+          numIngredients++
+        }
+        
+        })
+
+    
 
     
 }
@@ -66,6 +70,7 @@ const watchForm = () => {
     $(".js-meal-search").on("submit", function (event) {
         event.preventDefault()
         $(".js-instructions-button").css("display", "inline-block")
+        $(".js-ingredients-button").css("display", "inline-block")
         getMeal()
 
     })
@@ -83,6 +88,26 @@ const watchForm = () => {
             $(".js-instructions").css("display", "none")
             $(".js-instructions-button").val("Show Instructions")
             instructionsShown = false
+
+        }
+        
+
+
+    })
+
+    let ingredientsShown = false
+
+    $(".js-ingredients-button").on("click" , function (event) {
+        if(ingredientsShown == false) {
+        $(".js-ingredient").css("display", "inline-block")
+        $(".js-ingredients-button").val("Hide Ingredients")
+        ingredientsShown = true
+
+
+        }else if(ingredientsShown == true){
+            $(".js-ingredient").css("display", "none")
+            $(".js-ingredients-button").val("Show Ingredients")
+            ingredientsShown = false
 
         }
         
