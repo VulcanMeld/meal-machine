@@ -27,4 +27,9 @@ Finds a random meal for the user. Displays an image of it and a youtube link to 
 - CSS
 - Javascript
 - JQuery
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d5d1592a46f094575ce2136243158e32ab563547
 
