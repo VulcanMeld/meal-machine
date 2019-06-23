@@ -1,4 +1,4 @@
-# Meal Machine
+Meal Machine
 ==================
 
 ## Link to App
