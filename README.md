@@ -1,4 +1,5 @@
 # Meal Machine
+==================
 
 ## Link to App
 (https://vulcanmeld.github.io/meal-machine/)
